@@ -85,9 +85,7 @@ class Page extends React.Component{
      like:true
     }
   }
-componentDidMount(){
-  this.props.image();
-}
+
 
 arrayBufferToBase64(buffer) {
   var binary = "";
@@ -146,7 +144,7 @@ handleclick=()=>{
   let photo =this.state.selectedphoto;
   let text =this.state.text;
   this.props.upload(photo,text);
-  
+  this.props.image()
   this.setState({
     photo:false
   })
