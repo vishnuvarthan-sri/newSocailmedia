@@ -77,6 +77,8 @@ Uses Redux method
 ``` signup ```
 http://prnt.sc/10wru13
 -------------------------
+``` signin ```
 http://prnt.sc/10wrumt
+-------------------------
 http://prnt.sc/10wruux
 http://prnt.sc/10wrv3k
