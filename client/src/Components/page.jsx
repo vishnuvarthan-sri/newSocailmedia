@@ -81,6 +81,7 @@ class Page extends React.Component{
     super(props);
     this.state={
      selectedphoto:"",
+     imgPreview:"",
      photo:false,
      post:[],
      open:false,
@@ -136,6 +137,9 @@ this.setState({
   uploadImage=(e)=>{
 this.setState({
   selectedphoto:e.target.files[0],
+  imgPreview:e.target.files[0]
+  ? URL.createObjectURL(e.target.files[0])
+  : "",
   photo:true
 })
   }
@@ -233,7 +237,9 @@ action={
   </IconButton>
 }
 />
-<CardMedia  component="img" height="140" image={this.state.selectedphoto.name} />
+<CardMedia height="200"   >
+  <img src={this.state.imgPreview}/>
+</CardMedia>
 </Card>
 :null
 }
