@@ -167,7 +167,8 @@ handleclick=()=>{
   let text =this.state.text;
   this.props.upload(photo,text);
   this.setState({
-    photo:false
+    photo:false,
+    modal:true
   })
 }
 change=()=>{
@@ -247,6 +248,7 @@ action={
     <CancelIcon  />
   </IconButton>
 }
+title="Preview Image"
 />
 <CardMedia component="img"
           alt="preview"
