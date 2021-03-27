@@ -70,6 +70,11 @@ input: {
     maxWidth:350,
     marginLeft:theme.spacing(55),
   },
+  modalMedia:{
+    maxWidth:350,
+    marginLeft:theme.spacing(55),
+    marginTop:theme.spacing(30)
+  },
   sample:{
     marginLeft:theme.spacing(60),
     color:"blue",
@@ -89,7 +94,8 @@ class Page extends React.Component{
      imgSrc:"",
      text:"",
      recievetext:"",
-     like:true
+     like:true,
+     modal:true
     }
   }
 
@@ -147,7 +153,8 @@ this.setState({
   imgPreview:e.target.files[0]
   ? URL.createObjectURL(e.target.files[0])
   : "",
-  photo:true
+  photo:true,
+  modal:false
 })
   }
 text=(e)=>{
@@ -178,9 +185,9 @@ render(){
     const { classes } = this.props;
     console.log(this.state.selectedphoto,"the imagee")
    console.log(this.state.imgSrc,"theimagesrc")
-   let recievetext;
-   let image;
-   let contentType;
+   let recievetext ="";
+   let image="";
+   let contentType="";
    let imgSrc;
 if(this.props.user.post != undefined){
   this.props.user.post.map((all)=>{
@@ -263,7 +270,7 @@ action={
     :null
     }
 {this.props.user.post != undefined &&
-    <Card className={classes.anotherMedia}>
+    <Card className={this.state.modal ? classes.anotherMedia : classes.modalMedia}>
       {imgSrc != undefined  &&
   <CardMedia component="img"
   alt="preview"
