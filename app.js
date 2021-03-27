@@ -114,7 +114,7 @@ app.post('/page',  upload.single("photo"),function (req, res) {
     res.status(500).send({message:"internal server error"})
   }
   else  {
-    res.status(200).send({message:"Saved"})
+    res.status(200).send({save:saved})
   }
 
 });   
