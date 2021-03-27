@@ -254,8 +254,9 @@ action={
           variant="filled"
         />
     </form>
-    {this.props.user.post === undefined &&
+    {this.props.user.post === undefined && !this.state.selectedphoto ?
     <p className={classes.sample}>No post available Yet</p>
+    :null
     }
 {this.props.user.post != undefined &&
     <Card className={classes.anotherMedia}>
