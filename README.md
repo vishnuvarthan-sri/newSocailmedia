@@ -47,7 +47,7 @@ This endpoint is used for retrieving the posted image.
 ```js 
 //Model Structure
 Schema(
-  img: {
+  photo: {
   data: Buffer,
   contentType: String
   },
