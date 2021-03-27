@@ -32,7 +32,7 @@ export default function (state = CANNON_STATE, action) {
       return state;
 
     case SIGNUP_USER_SUCCESS_ACTION:
-      state.signup = action.payload.message;
+      state.token = action.payload.token;
       setTimeout(() => {
         toast({
           type: "warning",
