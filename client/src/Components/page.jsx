@@ -11,6 +11,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CancelIcon from '@material-ui/icons/Cancel';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
+import PhotoLibraryOutlinedIcon from '@material-ui/icons/PhotoLibraryOutlined';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
@@ -45,7 +46,7 @@ input: {
     display: 'none',
   },
   photo:{
-    marginLeft:theme.spacing(20),
+    marginLeft:theme.spacing(15),
     marginTop:theme.spacing(-8)
   },
   upload:{
@@ -68,6 +69,10 @@ input: {
   anotherMedia:{
     maxWidth:350,
     marginLeft:theme.spacing(55),
+  },
+  sample:{
+    marginLeft:theme.spacing(60),
+    color:"blue"
   }
 
   });
@@ -85,7 +90,6 @@ class Page extends React.Component{
      like:true
     }
   }
-
 
 arrayBufferToBase64(buffer) {
   var binary = "";
@@ -144,7 +148,7 @@ handleclick=()=>{
   let photo =this.state.selectedphoto;
   let text =this.state.text;
   this.props.upload(photo,text);
-  this.props.image()
+  this.props.image();
   this.setState({
     photo:false
   })
@@ -198,11 +202,18 @@ return(
        <Avatar className={classes.avatar}>
            <Face />
        </Avatar>
-      <input accept=".jpg,.png" className={classes.input} id="icon-button-file" type="file" multiple onChange={(e)=>this.uploadImage(e)}/>
-      <label htmlFor="icon-button-file">
-        <IconButton color="primary" aria-label="upload picture" component="span" className={classes.photo}>
-          <PhotoCamera />
-        </IconButton>
+       <input
+        accept="image/*"
+        className={classes.input}
+        id="contained-button-file"
+        multiple
+        type="file"
+        onChange={(e)=>this.uploadImage(e)}
+      />
+      <label htmlFor="contained-button-file">
+        <Button variant="contained" color="primary" component="span"  className={classes.photo}  endIcon={<PhotoLibraryOutlinedIcon />}>
+          Add
+        </Button>
       </label>
       <Button
         variant="contained"
@@ -228,15 +239,18 @@ action={
 }
       <TextField
           id="standard-multiline-static"
-          label="Multiline"
+          label="Post"
           onChange={(e)=>this.text(e)}
           multiline
           rows={3}
           className={classes.text}
-          defaultValue="Default Value"
+          placeholder="Whats in your mind ?"
           variant="filled"
         />
     </form>
+    {this.props.user.post === undefined &&
+    <p className={classes.sample}>No post available Yet</p>
+    }
 {this.props.user.post != undefined &&
     <Card className={classes.anotherMedia}>
       {this.state.imgSrc != undefined  &&
