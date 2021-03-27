@@ -72,7 +72,8 @@ input: {
   },
   sample:{
     marginLeft:theme.spacing(60),
-    color:"blue"
+    color:"blue",
+    display: "flex",
   }
 
   });
@@ -104,11 +105,16 @@ getImagePreviewSource(buffer, contentType) {
   var imageStr = this.arrayBufferToBase64(buffer);
   return base64Flag + imageStr;
 }
+componentDidUpdate(prevProps){
+if(this.props.user.posted !== prevProps.user.posted){
+  this.props.image()
+}
+}
  componentWillReceiveProps(){
    let text;
    let image;
    let contentType;
-   let imgSrc =this.state.imgSrc;
+   let imgSrc;
 if(this.props.user.post != undefined){
   this.props.user.post.map((all)=>{
     image = all.photo.data.data
@@ -131,7 +137,8 @@ this.setState({
   }
   cancel=()=>{
     this.setState({
-      photo:false 
+      photo:false ,
+      imgPreview:""
     })
   }
   uploadImage=(e)=>{
@@ -152,7 +159,6 @@ handleclick=()=>{
   let photo =this.state.selectedphoto;
   let text =this.state.text;
   this.props.upload(photo,text);
-  this.props.image();
   this.setState({
     photo:false
   })
@@ -172,20 +178,18 @@ render(){
     const { classes } = this.props;
     console.log(this.state.selectedphoto,"the imagee")
    console.log(this.state.imgSrc,"theimagesrc")
-//     let image;
-//     let text;
-//     let contentType;
-    
-//     if(this.props.user.post != undefined){
-// this.props.user.post.map((all)=>{
-//  image = all.photo.data.data
-//  contentType= all.photo.contentType
-// console.log(all.text,"the text")
-// })
-//     }
-// let imgSrc =this.getImagePreviewSource(image,contentType)
-// console.log(imgSrc,"the actual image")
-// console.log(text,"text")
+   let recievetext;
+   let image;
+   let contentType;
+   let imgSrc;
+if(this.props.user.post != undefined){
+  this.props.user.post.map((all)=>{
+    image = all.photo.data.data
+    contentType= all.photo.contentType
+    recievetext =all.text
+   });
+   imgSrc = this.getImagePreviewSource(image,contentType);
+}
 return(
     <div className={classes.root}>
     <AppBar position="static">
@@ -237,9 +241,9 @@ action={
   </IconButton>
 }
 />
-<CardMedia height="200"   >
-  <img src={this.state.imgPreview}/>
-</CardMedia>
+<CardMedia component="img"
+          alt="preview"
+          height="140" image={this.state.imgPreview}   />
 </Card>
 :null
 }
@@ -260,14 +264,14 @@ action={
     }
 {this.props.user.post != undefined &&
     <Card className={classes.anotherMedia}>
-      {this.state.imgSrc != undefined  &&
-  <CardMedia  height="140"> 
-  <img src={this.state.imgSrc} />
-  </CardMedia>}
-  {this.state.text  &&
+      {imgSrc != undefined  &&
+  <CardMedia component="img"
+  alt="preview"
+  height="140" image={imgSrc}   />}
+  {recievetext  &&
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-           {this.state.recievetext}
+           {recievetext}
         </Typography>
       </CardContent>}
     
