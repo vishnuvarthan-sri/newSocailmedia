@@ -17,11 +17,16 @@ Frontend Technology:
 
 
 ## Server
-You can call the two endpoints provided, one for saving the photo to the database and another endpoint for retrieving the posted image.
+You can call the four endpoints provided, first two for signin and signup and other two for saving the photo to the database and another endpoint for retrieving the posted image.
 
 #### Endpoints
+``` /api/signin ```
+This endpoint is used for the user to signin
 
-``` /api/upload ```
+``` /api/signup ```
+This endpoint is used for the user to sigup if don't have an account
+
+``` /api/page ```
 This endpoint is used for posting the image and storing it in the Database.
 
 ```/api/image ```
