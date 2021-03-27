@@ -74,7 +74,9 @@ Uses Redux method
 |src/reducers/user_reducer.js | The reducer stores the instial state of the payload Got           |
 |src/reducers/index.js        | All the reducers are combined and given a Key prop to be accessed |
 ## Screenshots
+``` signup ```
 http://prnt.sc/10wru13
+-------------------------
 http://prnt.sc/10wrumt
 http://prnt.sc/10wruux
 http://prnt.sc/10wrv3k
