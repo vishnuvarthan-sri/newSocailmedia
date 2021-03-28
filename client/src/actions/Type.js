@@ -3,7 +3,7 @@ import config from '../config';
 
 export const API_URL = config['api_url'];
 
-axios.defaults.baseURL = API_URL;
+// axios.defaults.baseURL = API_URL;
 
   
   export const LOGIN_USER_SUCCESS_ACTION='login_user_success';
