@@ -47,7 +47,7 @@ export default function (state = CANNON_STATE, action) {
       state.signupError = true;
       return state;
     case UPLOAD_POST_SUCCESS_ACTION:
-      state.posted =action.payload.save;
+      state.posted = action.payload.save;
       state.postFailure = false;
       return state;
     case UPLOAD_POST_FAILURE_ACTION:

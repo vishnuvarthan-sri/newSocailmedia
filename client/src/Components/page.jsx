@@ -112,29 +112,29 @@ getImagePreviewSource(buffer, contentType) {
   return base64Flag + imageStr;
 }
 componentDidUpdate(prevProps){
-if(this.props.user.posted !== prevProps.user.posted){
-  this.props.image()
+if(prevProps.user.posted !== this.props.user.posted ){
+  this.props.image();
 }
 }
- componentWillReceiveProps(){
-   let text;
-   let image;
-   let contentType;
-   let imgSrc;
-if(this.props.user.post !== undefined){
-  this.props.user.post.map((all)=>{
-    image = all.photo.data.data
-    contentType= all.photo.contentType
-    text =all.text
-   });
-   imgSrc = this.getImagePreviewSource(image,contentType);
-}
-console.log(imgSrc,text,"source")
-this.setState({
-  recievetext:text,
-  imgSrc
-})
- }
+//  componentWillReceiveProps(){
+//    let text;
+//    let image;
+//    let contentType;
+//    let imgSrc;
+// if(this.props.user.post !== undefined){
+//   this.props.user.post.map((all)=>{
+//     image = all.photo.data.data
+//     contentType= all.photo.contentType
+//     text =all.text
+//    });
+//    imgSrc = this.getImagePreviewSource(image,contentType);
+// }
+// console.log(imgSrc,text,"source")
+// this.setState({
+//   recievetext:text,
+//   imgSrc
+// })
+//  }
  
 
 
@@ -185,11 +185,11 @@ render(){
     const { classes } = this.props;
     console.log(this.state.selectedphoto,"the imagee")
    console.log(this.state.imgSrc,"theimagesrc")
-   let recievetext ="";
-   let image="";
-   let contentType="";
+   let recievetext ;
+   let image;
+   let contentType;
    let imgSrc;
-if(this.props.user.post != undefined){
+if(this.props.user.post !== undefined){
   this.props.user.post.map((all)=>{
     image = all.photo.data.data
     contentType= all.photo.contentType
