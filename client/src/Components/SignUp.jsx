@@ -33,7 +33,7 @@ class SignUp extends React.Component {
   }
 
   componentDidUpdate(){
-    if(this.state.token === this.props.user.signup){
+    if(this.props.user.signup === this.state.token){
       this.props.history.push("/")
     }
     }
@@ -63,7 +63,12 @@ let email = this.state.email;
 let uname =this.state.uname;
 let psw =this.state.psw;
 let Cnpsw = this.state.Cnpsw;
+if(psw != Cnpsw){
+  alert("Password mismatch")
+}
+else{
 this.props.signup(email,uname,psw,Cnpsw)
+}
 }
 
   handleClick=()=>{

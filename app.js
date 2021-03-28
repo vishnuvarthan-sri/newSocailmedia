@@ -85,10 +85,7 @@ res.send({message:"Account already exists"})
 }
 else{
   user.save(function (err) {
-    if (err) throw err;
-    if(Cnpsw != psw){
-      res.status(400).send({message:"Password Missmatch"})
-    }
+    if (err) throw err; 
     else  {
       res.send({token:"Saved"})
     }
