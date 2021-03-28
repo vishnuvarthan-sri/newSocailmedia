@@ -73,7 +73,7 @@ input: {
   modalMedia:{
     maxWidth:350,
     marginLeft:theme.spacing(55),
-    marginTop:theme.spacing(30)
+    marginTop:theme.spacing(35)
   },
   sample:{
     marginLeft:theme.spacing(60),
