@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "client":"npm start --prefix client",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm ren build --prefix client"
+    "build": "cd client && npm run build",
+    "install-client" : "cd client & npm install",
+    "heroku-postbuild":"npm run install-client && npm run build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
