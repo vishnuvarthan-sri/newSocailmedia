@@ -5,7 +5,7 @@ import * as types from './Type';
 export const login = (email,psw) => {
     return function(dispatch) {
         axios
-            .post(types.API_URL + '/login',{email:email,psw:psw})
+            .post( '/login',{email:email,psw:psw})
             .then(function(response) {
                 
                 dispatch({
@@ -25,7 +25,7 @@ export const login = (email,psw) => {
 export const signup = (email,uname,psw,Cnpsw) => {
     return function(dispatch) {
         axios
-            .post(types.API_URL + '/signup',{email:email,psw:psw,uname:uname,Cnpsw:Cnpsw})
+            .post( '/signup',{email:email,psw:psw,uname:uname,Cnpsw:Cnpsw})
             .then(function(response) {
                 
                 dispatch({
@@ -48,7 +48,7 @@ export const upload = (photo,text) => {
     file.append('text',text)
     return function(dispatch) {
         axios
-            .post(types.API_URL + '/page',file)
+            .post('/page',file)
             .then(function(response) {
                 
                 dispatch({
@@ -67,7 +67,7 @@ export const upload = (photo,text) => {
 export const image = () => {
     return function(dispatch) {
         axios
-            .get(types.API_URL + '/image')
+            .get('/image')
             .then(function(response) {
                 
                 dispatch({
