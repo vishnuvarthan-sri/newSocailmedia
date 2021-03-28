@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node app.js",
     "client":"npm start",
-    "build": "cd client  npm run build"
+    "build": "cd client  npm run build",
+    "heroku-postbuild":"cd client npm install && npm run build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
