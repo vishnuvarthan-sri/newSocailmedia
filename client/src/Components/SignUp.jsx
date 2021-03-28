@@ -33,7 +33,7 @@ class SignUp extends React.Component {
   }
 
   componentDidUpdate(){
-    if(this.props.user.token === this.state.token){
+    if(this.state.token === this.props.user.signup){
       this.props.history.push("/")
     }
     }
