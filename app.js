@@ -114,7 +114,7 @@ app.post('/page',  upload.single("photo"),function (req, res) {
     
 });
 
-app.get('/image',  function(req, res) {
+app.post('/image',  function(req, res) {
 
   Page.find({}, function(err, image) {
     if (image) {

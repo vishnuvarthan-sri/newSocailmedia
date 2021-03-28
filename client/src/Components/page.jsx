@@ -270,7 +270,7 @@ title="Preview"
     <p className={classes.sample}>No post available Yet</p>
     :null
     }
-{this.props.user.post != undefined &&
+{this.props.user.post !== undefined &&
     <Card className={this.state.modal ? classes.anotherMedia : classes.modalMedia}>
       {imgSrc != undefined  &&
   <CardMedia component="img"
