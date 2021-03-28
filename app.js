@@ -10,16 +10,10 @@ var app = express();
 var multer = require('multer');
 var fs = require("fs");
 var port = process.env.PORT || 5000;
-var server = app.listen(port, function () {
-    var host = server.address().address
-    var port = server.address().port
-    console.log("Example app listening at http://%s:%s", host, port)
-});
-app.use(session({
-    secret: 'ssshhhhh',
-    resave: false,
-    saveUninitialized: false
-}));
+app.listen(port,  console.log(`Example app listening at http://%s:%s ${port}`));
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/public '));
+}
 var cors = require('cors');
 app.use(cors());
 app.engine('ejs', require('ejs').__express);
