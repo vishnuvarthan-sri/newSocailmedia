@@ -252,7 +252,7 @@ title="Preview Image"
 />
 <CardMedia component="img"
           alt="preview"
-          height="140" image={this.state.imgPreview}   />
+          height="170" image={this.state.imgPreview}   />
 </Card>
 :null
 }
