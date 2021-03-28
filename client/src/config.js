@@ -1,6 +1,6 @@
 var config = {
-    
-    api_url: 'https://crayonpersonal.herokuapp.com/',
+     // api_url: 'http://localhost:5000',
+    // api_url: 'https://crayonpersonal.herokuapp.com/',
    
 };
 
