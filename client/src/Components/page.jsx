@@ -73,7 +73,7 @@ input: {
   modalMedia:{
     maxWidth:350,
     marginLeft:theme.spacing(55),
-    marginTop:theme.spacing(35)
+    marginTop:theme.spacing(30)
   },
   sample:{
     marginLeft:theme.spacing(60),
@@ -167,8 +167,7 @@ handleclick=()=>{
   let text =this.state.text;
   this.props.upload(photo,text);
   this.setState({
-    photo:false,
-    modal:true
+    photo:false
   })
 }
 change=()=>{
@@ -248,11 +247,11 @@ action={
     <CancelIcon  />
   </IconButton>
 }
-title="Preview Image"
+title="Preview"
 />
 <CardMedia component="img"
           alt="preview"
-          height="170" image={this.state.imgPreview}   />
+          height="200" image={this.state.imgPreview}   />
 </Card>
 :null
 }
