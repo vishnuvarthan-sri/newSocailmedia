@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "build": "cd client/src && npm start",
-    "install-client" : "cd client/src & npm install",
+    "build": "cd client && npm run build",
+    "install-client" : "cd client & npm install",
     "heroku-postbuild":"npm run install-client && npm run build"
   },
   "dependencies": {

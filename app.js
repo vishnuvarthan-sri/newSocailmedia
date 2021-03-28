@@ -12,7 +12,7 @@ var fs = require("fs");
 var port = process.env.PORT || 5000;
 app.listen(port,  console.log(`Example app listening at http://%s:%s ${port}`));
 if(process.env.NODE_ENV === 'production'){
-  app.use(express.static('client/public '));
+  app.use(express.static('client/build '));
 }
 var cors = require('cors');
 app.use(cors());
