@@ -8,7 +8,7 @@ var Page = require('./routes/Page');
 var app = express();
 var multer = require('multer');
 var fs = require("fs");
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 5000;
 app.listen(port,  console.log(`Example app listening at http://%s:%s ${port}`));
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static(path.join(__dirname, '/client/build')));
