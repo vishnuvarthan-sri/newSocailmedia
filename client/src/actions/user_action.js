@@ -1,7 +1,7 @@
 import axios from 'axios';
 // import { template } from 'underscore';
 import * as types from './Type';
-
+//types.API_URL
 export const login = (email,psw) => {
     return function(dispatch) {
         axios
