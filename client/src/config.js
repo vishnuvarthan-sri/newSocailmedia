@@ -1,6 +1,6 @@
 var config = {
     
-    api_url: 'http://localhost:58698',
+    api_url: 'http://localhost:20034',
    
 };
 
