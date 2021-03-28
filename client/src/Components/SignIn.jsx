@@ -1,7 +1,6 @@
 import React from 'react';
-import { Paper, withStyles, Grid, TextField, Button, FormControlLabel, Checkbox, Link, Avatar,Snackbar } from '@material-ui/core';
-import { Face, Fingerprint,LockOutlined } from '@material-ui/icons';
-import Page from './page.jsx';
+import { Paper, withStyles, Grid, TextField, Button, Link, Avatar } from '@material-ui/core';
+import {LockOutlined } from '@material-ui/icons';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
@@ -42,7 +41,7 @@ class SignIn extends React.Component {
   nextPage=()=>{
     let email = this.state.email;
     let psw = this.state.psw;
-    if(email && psw != null){
+    if(email && psw !== null){
     this.props.login(email,psw)
     }
    

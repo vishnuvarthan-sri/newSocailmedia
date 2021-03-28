@@ -1,6 +1,6 @@
 import React from 'react';
-import { Paper, withStyles, Grid, TextField, Button, FormControlLabel, Checkbox, Link, Avatar,AppBar,Toolbar,Typography,IconButton,Container ,CssBaseline,Icon} from '@material-ui/core';
-import { Face, Fingerprint,LockOutlined,PhotoCamera, ThreeSixtySharp} from '@material-ui/icons';
+import { withStyles, Grid, TextField, Button,  Avatar,AppBar,Toolbar,Typography,IconButton,Container ,CssBaseline} from '@material-ui/core';
+import { Face, } from '@material-ui/icons';
 import MenuIcon from '@material-ui/icons/Menu';
 import SendIcon from '@material-ui/icons/Send';
 import Card from '@material-ui/core/Card';
@@ -121,7 +121,7 @@ if(this.props.user.posted !== prevProps.user.posted){
    let image;
    let contentType;
    let imgSrc;
-if(this.props.user.post != undefined){
+if(this.props.user.post !== undefined){
   this.props.user.post.map((all)=>{
     image = all.photo.data.data
     contentType= all.photo.contentType

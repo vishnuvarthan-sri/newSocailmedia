@@ -11,7 +11,7 @@ var multer = require('multer');
 var fs = require("fs");
 var port = process.env.PORT || 8080;
 app.listen(port,  console.log(`Example app listening at http://%s:%s ${port}`));
-if(process.env.NODE_ENV === 'production'){
+if(process.env.NODE_ENV === 'development'){
   app.use(express.static('client/build '));
   app.get('*',(req,res)=>{
    res.sendFile(path.resolve(__dirname,'client','build','index.html'))
