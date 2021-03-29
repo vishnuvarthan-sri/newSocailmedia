@@ -170,7 +170,7 @@ render(){
    let image;
    let contentType;
    let imgSrc;
-if(this.props.user.post !== undefined){
+if(this.props.user.post != undefined){
   this.props.user.post.map((all)=>{
     image = all.photo.data.data
     contentType= all.photo.contentType
