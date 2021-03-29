@@ -112,7 +112,7 @@ getImagePreviewSource(buffer, contentType) {
   return base64Flag + imageStr;
 }
 componentDidUpdate(prevProps){
-if(this.props.user.post !== prevProps.user.post){
+if(prevProps.user.post !== this.props.user.post){
   this.props.image();
 }
 }
@@ -184,7 +184,7 @@ unchange=()=>{
 render(){
     const { classes } = this.props;
     console.log(this.state.selectedphoto,"the imagee")
-   console.log(this.state.imgSrc,"theimagesrc")
+   console.log(this.props.user.post,"src")
    let recievetext ;
    let image;
    let contentType;
