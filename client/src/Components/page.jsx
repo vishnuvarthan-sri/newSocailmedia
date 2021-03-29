@@ -182,7 +182,6 @@ if(this.props.user.post != undefined){
    });
    imgSrc = this.getImagePreviewSource(image,contentType);
 }
-console.log(imageSrc,"image")
 return(
     <div className={classes.root}>
     <AppBar position="static">
