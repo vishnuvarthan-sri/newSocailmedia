@@ -99,12 +99,11 @@ class Page extends React.Component{
     }
   }
 
-
-  componentDidUpdate(prevProps){
-    if(prevProps.user.post != this.props.user.post){
-      this.props.image();
-    }
-    }
+componentDidUpdate(prevProps){
+  if(this.props.user.post != prevProps.user.post){
+    this.props.image();
+  }
+}
 
 arrayBufferToBase64(buffer) {
   var binary = "";
@@ -164,8 +163,7 @@ unchange=()=>{
 }
 
 render(){
-    const { classes } = this.props;
-    console.log(this.state.selectedphoto,"the imagee")
+   const { classes } = this.props;
    console.log(this.props.user.post,"src")
    let recievetext ;
    let image;
