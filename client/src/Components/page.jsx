@@ -149,6 +149,7 @@ handleclick=()=>{
   this.props.upload(photo,text);
   this.setState({
     photo:false,
+    modal:true
   })
 }
 change=()=>{
