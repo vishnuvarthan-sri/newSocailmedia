@@ -4,7 +4,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var Account = require('./routes/Account');
-var Page = require('./routes/Page');
+var Post = require('./routes/Post');
 var app = express();
 var multer = require('multer');
 var fs = require("fs");
@@ -96,7 +96,7 @@ else{
 
 app.post('/page',  upload.single("photo"),function (req, res) {
 
-  var newImage = new Page();
+  var newImage = new Post();
   if(req.file){
     newImage.photo.data = fs.readFileSync(req.file.path);
     newImage.photo.contentType = req.file.mimetype;
@@ -116,7 +116,7 @@ app.post('/page',  upload.single("photo"),function (req, res) {
 
 app.get('/image',  function(req, res) {
 
-  Page.find({}, function(err, image) {
+  Post.find({}, function(err, image) {
     if (image) {
       console.log("====Retrieved Image====");
       console.log(image);

@@ -99,6 +99,13 @@ class Page extends React.Component{
     }
   }
 
+
+  componentDidUpdate(prevProps){
+    if(prevProps.user.post != this.props.user.post){
+      this.props.image();
+    }
+    }
+
 arrayBufferToBase64(buffer) {
   var binary = "";
   var bytes = [].slice.call(new Uint8Array(buffer));
@@ -111,32 +118,7 @@ getImagePreviewSource(buffer, contentType) {
   var imageStr = this.arrayBufferToBase64(buffer);
   return base64Flag + imageStr;
 }
-componentDidUpdate(prevProps){
-if(prevProps.user.post !== this.props.user.post){
-  this.props.image();
-}
-}
-//  componentWillReceiveProps(){
-//    let text;
-//    let image;
-//    let contentType;
-//    let imgSrc;
-// if(this.props.user.post !== undefined){
-//   this.props.user.post.map((all)=>{
-//     image = all.photo.data.data
-//     contentType= all.photo.contentType
-//     text =all.text
-//    });
-//    imgSrc = this.getImagePreviewSource(image,contentType);
-// }
-// console.log(imgSrc,text,"source")
-// this.setState({
-//   recievetext:text,
-//   imgSrc
-// })
-//  }
  
-
 
   logout=()=>{
     this.props.history.push("/")

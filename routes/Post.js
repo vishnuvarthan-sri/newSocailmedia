@@ -3,8 +3,8 @@ var Schema = mongoose.Schema;
 mongoose.connect(process.env.MONGODB_URI ||'mongodb+srv://vishnuvarthan:thalavishnu98@cluster0.6ngdn.mongodb.net/vishnuvarthan?retryWrites=true&w=majority');
 
 
-// creating a new schema for account details
-var pageSchema = new Schema({
+// creating a new schema for post details
+var postSchema = new Schema({
     text: { type: String, required: true },
     photo:{data: Buffer, contentType: String}   
 });
@@ -18,7 +18,7 @@ db.once("open", () => {
 });
 
 
-var Page = mongoose.model('Page', pageSchema);
-module.exports = Page;
+var Post = mongoose.model('Post', postSchema);
+module.exports = Post;
 
 
