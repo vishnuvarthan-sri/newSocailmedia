@@ -73,7 +73,7 @@ input: {
   modalMedia:{
     maxWidth:350,
     marginLeft:theme.spacing(55),
-    marginTop:theme.spacing(35)
+    marginTop:theme.spacing(32)
   },
   sample:{
     marginLeft:theme.spacing(60),
@@ -149,7 +149,7 @@ handleclick=()=>{
   this.props.upload(photo,text);
   this.setState({
     photo:false,
-    modal:true
+    text:""
   })
 }
 change=()=>{
@@ -178,6 +178,7 @@ if(this.props.user.post !== undefined){
    });
    imgSrc = this.getImagePreviewSource(image,contentType);
 }
+console.log(image,"image")
 return(
     <div className={classes.root}>
     <AppBar position="static">
