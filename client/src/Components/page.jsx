@@ -112,7 +112,7 @@ getImagePreviewSource(buffer, contentType) {
   return base64Flag + imageStr;
 }
 componentDidUpdate(prevProps){
-if(prevProps.user.posted !== this.props.user.posted ){
+if(this.props.user.post !== prevProps.user.post){
   this.props.image();
 }
 }
@@ -168,7 +168,6 @@ handleclick=()=>{
   this.props.upload(photo,text);
   this.setState({
     photo:false,
-    modal:true
   })
 }
 change=()=>{
