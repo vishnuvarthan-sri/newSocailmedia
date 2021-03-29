@@ -67,7 +67,7 @@ export const upload = (photo,text) => {
 export const image = () => {
     return function(dispatch) {
         axios
-            .post('/image')
+            .get('/image')
             .then(function(response) {
                 
                 dispatch({
