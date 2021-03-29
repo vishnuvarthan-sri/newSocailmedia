@@ -146,7 +146,11 @@ this.setState({
 handleclick=()=>{
   let photo =this.state.selectedphoto;
   let text =this.state.text;
+  if(photo && text != undefined){
   this.props.upload(photo,text);
+  }else{
+    alert("Enter both text and image")
+  }
   this.setState({
     photo:false,
     text:""
@@ -171,14 +175,14 @@ render(){
    let contentType;
    let imgSrc;
 if(this.props.user.post != undefined){
-  this.props.user.post.map((all)=>{
-    image = all.photo.data.data
-    contentType= all.photo.contentType
-    recievetext =all.text
+  this.props.user.post.map((data)=>{
+    image = data.photo.data.data
+    contentType = data.photo.contentType
+    recievetext = data.text
    });
    imgSrc = this.getImagePreviewSource(image,contentType);
 }
-console.log(image,"image")
+console.log(imageSrc,"image")
 return(
     <div className={classes.root}>
     <AppBar position="static">
