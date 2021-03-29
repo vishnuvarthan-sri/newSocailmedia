@@ -100,7 +100,7 @@ class Page extends React.Component{
   }
 
 componentDidUpdate(prevProps){
-  if(this.props.user.post != prevProps.user.post){
+  if(this.props.user.posted != prevProps.user.posted){
     this.props.image();
   }
 }
