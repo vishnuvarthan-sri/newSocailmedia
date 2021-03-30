@@ -282,6 +282,7 @@ title="Preview"
         {!this.state.like && 
           <IconButton aria-label="add to favorites" onClick={this.unchange} >
           <FavoriteIcon style={{color:"red"}}/>
+          <p>{this.state.count}</p>
         </IconButton>
         }
         <IconButton aria-label="share">
