@@ -274,12 +274,10 @@ title="Preview"
     
       <CardActions disableSpacing>
         {this.state.like &&
-        <div>
         <IconButton aria-label="add to favorites" onClick={this.change}>
           <FavoriteIcon />
+          <p>{this.state.count}</p>
         </IconButton>
-        <p>{this.state.count}</p>
-        </div>
         }
         {!this.state.like && 
           <IconButton aria-label="add to favorites" onClick={this.unchange} >
