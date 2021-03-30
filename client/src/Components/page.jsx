@@ -153,7 +153,8 @@ handleclick=()=>{
   }
   this.setState({
     photo:false,
-    text:""
+    text:"",
+    modal:true
   })
 }
 change=()=>{
