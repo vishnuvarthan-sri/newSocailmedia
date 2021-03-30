@@ -73,7 +73,7 @@ input: {
   modalMedia:{
     maxWidth:350,
     marginLeft:theme.spacing(55),
-    marginTop:theme.spacing(32)
+    marginTop:theme.spacing(35)
   },
   sample:{
     marginLeft:theme.spacing(60),
@@ -95,7 +95,8 @@ class Page extends React.Component{
      text:"",
      recievetext:"",
      like:true,
-     modal:true
+     modal:true,
+     count:0
     }
   }
 
@@ -159,7 +160,8 @@ handleclick=()=>{
 }
 change=()=>{
   this.setState({
-    like:false
+    like:false,
+    count:this.state.count +1
   })
 }
 unchange=()=>{
@@ -246,6 +248,7 @@ title="Preview"
           label="Post"
           onChange={(e)=>this.text(e)}
           multiline
+          value={this.state.text}
           rows={3}
           className={classes.text}
           placeholder="Whats in your mind ?"
@@ -271,9 +274,13 @@ title="Preview"
     
       <CardActions disableSpacing>
         {this.state.like &&
+        <div>
         <IconButton aria-label="add to favorites" onClick={this.change}>
           <FavoriteIcon />
-        </IconButton>}
+        </IconButton>
+        <p>{this.state.count}</p>
+        </div>
+        }
         {!this.state.like && 
           <IconButton aria-label="add to favorites" onClick={this.unchange} >
           <FavoriteIcon style={{color:"red"}}/>
